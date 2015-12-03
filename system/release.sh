@@ -14,9 +14,7 @@ function delay(){
     sleep 0.2;
 }
 
-#
-# Description : print out executing progress
-# 
+# Funcion para mostrar animación:
 CURRENT_PROGRESS=0
 function progress(){
     PARAM_PROGRESS=$1;
@@ -44,33 +42,29 @@ function progress(){
     CURRENT_PROGRESS=$PARAM_PROGRESS;
 }
 
-############################---Description---###################################
-#                                                                              #
-# 									GIT					   	                   #
-#                                                                              #
-################################################################################
-# PARAMETERS
-PROJECT_NAME=${PWD##*/}		# to assign to a variable
-SERVER_NAMES=("MI_4" "MI_6")
-COMMIT=$1
-PULL_OUTPUT=()
-PROGRESS=0
+# M I    S C R I P T
 
-# SET CONFIG PARAMS
+# Variables generales:
+SERVER_NAMES=("MI_4" "MI_6") # Servidores que se actualizarán
+COMMIT=$1 # Nombre del commit
+PULL_OUTPUT=() # Tupla para almacenar los datos de respuesta
+PROGRESS=0 # Variable para almacenar el progreso y mostrarlo en la animación
+
+# Configura git:
 git config --global user.email "linustorvaldsunam@gmail.com"
 git config --global user.name "linustorvaldsunam"
 
-# # ADD
+# Agrega los archivos
 PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing add all        "
 git add --all
 
-# # COMMIT
+# Hace el commit:
 PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing commit         "
 COMMIT=$((git commit -m  "$COMMIT") 2>&1)
 
-# PUSH
+# Hace el push:
 PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing push           "
 PUSH=$((git push https://linustorvaldsunam:linustorvalds1@github.com/JC-Maxwell/my_system.git master) 2>&1)
