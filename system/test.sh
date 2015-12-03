@@ -13,7 +13,7 @@ git config --global user.name "donmikeazul"
 git add --all
 
 # # COMMIT
-git commit -m  "$COMMIT"
+A=$((git commit -m  "$COMMIT") 2>&1)
 
 # # PUSH
 # git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
