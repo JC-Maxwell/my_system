@@ -7,8 +7,7 @@
 # ██║ ╚═╝ ██║██║    ██║     ██║  ██║╚██████╔╝██████╔╝███████╗███████╗██║ ╚═╝ ██║██║  ██║
 # ╚═╝     ╚═╝╚═╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝
                                                                                       
-function delay()
-{
+function delay(){
     sleep 0.2;
 }
 
@@ -16,11 +15,9 @@ function delay()
 # Description : print out executing progress
 # 
 CURRENT_PROGRESS=0
-function progress()
-{
+function progress(){
     PARAM_PROGRESS=$1;
     PARAM_PHASE=$2;
-
     if [ $CURRENT_PROGRESS -le 0 -a $PARAM_PROGRESS -ge 0 ]  ; then echo -ne "[..........................] (0%)  $PARAM_PHASE \r"  ; delay; fi;
     if [ $CURRENT_PROGRESS -le 5 -a $PARAM_PROGRESS -ge 5 ]  ; then echo -ne "[#.........................] (5%)  $PARAM_PHASE \r"  ; delay; fi;
     if [ $CURRENT_PROGRESS -le 10 -a $PARAM_PROGRESS -ge 10 ]; then echo -ne "[##........................] (10%) $PARAM_PHASE \r"  ; delay; fi;
@@ -41,9 +38,7 @@ function progress()
     if [ $CURRENT_PROGRESS -le 85 -a $PARAM_PROGRESS -ge 85 ]; then echo -ne "[#######################...] (90%) $PARAM_PHASE \r"  ; delay; fi;
     if [ $CURRENT_PROGRESS -le 90 -a $PARAM_PROGRESS -ge 90 ]; then echo -ne "[##########################] (100%) $PARAM_PHASE \r" ; delay; fi;
     if [ $CURRENT_PROGRESS -le 100 -a $PARAM_PROGRESS -ge 100 ];then echo -ne '\o/                                              \n' ; delay; fi;
-
     CURRENT_PROGRESS=$PARAM_PROGRESS;
-
 }
 
 ############################---Description---###################################
