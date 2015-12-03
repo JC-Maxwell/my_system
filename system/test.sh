@@ -66,8 +66,7 @@ git config --global user.name "donmikeazul"
 git add --all
 
 # # COMMIT
-# COMMIT=$((git commit -m  "$COMMIT") 2>&1)
-git commit -m  "$COMMIT"
+COMMIT=$((git commit -m  "$COMMIT") 2>&1)
 
 # PUSH
 PUSH=$((git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master) 2>&1)
