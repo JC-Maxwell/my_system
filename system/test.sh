@@ -26,5 +26,12 @@ do
 	ssh $i '
 	cd my_system/
 	PULL=$((git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master) 2>&1)
+	PULL_OUTPUT+=(PULL)
 	'
+done
+
+# STATUS
+for j in "${PULL_OUTPUT[@]}"
+do
+	echo $j
 done
