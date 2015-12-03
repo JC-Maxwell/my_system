@@ -50,6 +50,8 @@ COMMIT=$1 # Nombre del commit
 PULL_OUTPUT=() # Tupla para almacenar los datos de respuesta
 PROGRESS=0 # Variable para almacenar el progreso y mostrarlo en la animación
 
+############################################### ESTO OCURRE EN EL SERVIDOR PRINCIPAL DONDE SE HIZO EL DESARROLLO
+
 # Configura git:
 git config --global user.email "linustorvaldsunam@gmail.com"
 git config --global user.name "linustorvaldsunam"
@@ -69,25 +71,21 @@ PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing push           "
 PUSH=$((git push https://linustorvaldsunam:linustorvalds1@github.com/JC-Maxwell/my_system.git master) 2>&1)
 
-# PULL
+# Hace el pull:
 for i in "${SERVER_NAMES[@]}"
 do	
 	PROGRESS=$((PROGRESS+5))
 	progress $PROGRESS "Executing pull in $i 		"
+    # ---------------------------------- BEGIN --- ESTO OCURRE EN LOS SERVIDORES A DONDE SE EMPUJARÁN LOS CAMBIOS
 	PULL=$((ssh -t $i '
 	cd my_system/
 	git pull https://linustorvaldsunam:linustorvalds1@github.com/JC-Maxwell/my_system.git master
 	sudo /etc/init.d/supervisord restart	
 	') 2>&1)
+    # ---------------------------------- END   --- ESTO OCURRE EN LOS SERVIDORES A DONDE SE EMPUJARÁN LOS CAMBIOS
 	PULL_OUTPUT+=($PULL)
 	PROGRESS=$((PROGRESS+5))
 done
 
 progress 90 "RESTARTING              "
 progress 100 "\o/              "
-
-# STATUS
-# for j in "${PULL_OUTPUT[@]}"
-# do
-# 	echo $j
-# done
