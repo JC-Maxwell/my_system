@@ -25,6 +25,6 @@ for i in "${SERVER_NAMES[@]}"
 do
 	ssh $i '
 	cd my_system/
-	PULL = git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
+	PULL=$((git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master) 2>&1)
 	'
 done
