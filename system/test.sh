@@ -27,7 +27,7 @@ do
 	cd my_system/
 	git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master	
 	') 2>&1)
-	PULL_OUTPUT+=(PULL)
+	PULL_OUTPUT+=($PULL)
 done
 
 # STATUS
