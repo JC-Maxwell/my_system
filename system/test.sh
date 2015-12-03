@@ -29,11 +29,11 @@ do
 	# sudo /etc/init.d/supervisord restart	
 	# ') 2>&1)
 	
-	PULL=$((ssh -t $i << EOF
+	PULL=$((ssh -t $i '
 	cd my_system/
 	git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
 	sudo /etc/init.d/supervisord restart	
-	EOF) 2>&1)
+	') 2>&1)
 	PULL_OUTPUT+=($PULL)
 
 done
