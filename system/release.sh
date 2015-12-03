@@ -61,8 +61,8 @@ PULL_OUTPUT=()
 PROGRESS=0
 
 # SET CONFIG PARAMS
-git config --global user.email "donmikebautista@gmail.com"
-git config --global user.name "donmikeazul"
+git config --global user.email "linustorvaldsunam@gmail.com"
+git config --global user.name "linustorvaldsunam"
 
 # # ADD
 PROGRESS=$((PROGRESS+5))
@@ -77,7 +77,7 @@ COMMIT=$((git commit -m  "$COMMIT") 2>&1)
 # PUSH
 PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing push           "
-PUSH=$((git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master) 2>&1)
+PUSH=$((git push https://linustorvaldsunam:LinusTorvalds@github.com/JC-Maxwell/my_system.git master) 2>&1)
 
 
 # PULL
@@ -87,7 +87,7 @@ do
 	progress $PROGRESS "Executing pull in $i 		"
 	PULL=$((ssh -t $i '
 	cd my_system/
-	git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
+	git pull https://linustorvaldsunam:LinusTorvalds@github.com/JC-Maxwell/my_system.git master
 	sudo /etc/init.d/supervisord restart	
 	') 2>&1)
 	PULL_OUTPUT+=($PULL)
