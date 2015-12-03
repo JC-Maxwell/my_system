@@ -25,7 +25,8 @@ for i in "${SERVER_NAMES[@]}"
 do
 	PULL=$((ssh $i '
 	cd my_system/
-	git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master	
+	git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
+	sudo /etc/init.d/supervisord restart	
 	') 2>&1)
 	PULL_OUTPUT+=($PULL)
 done
