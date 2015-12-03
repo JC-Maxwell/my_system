@@ -9,23 +9,23 @@ COMMIT=$1
 git config --global user.email "donmikebautista@gmail.com"
 git config --global user.name "donmikeazul"
 
-# ADD
-A=$(git add --all)
+# # ADD
+git add --all
 
-# COMMIT
-B=$(git commit -m  "$COMMIT")
+# # COMMIT
+git commit -m  "$COMMIT"
 
-# PUSH
-C=$(git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master)
+# # PUSH
+# git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
 
-# PULL
-for i in "${SERVER_NAMES[@]}"
-do
-	echo "================================"
-	echo $i
-	echo "================================"
-	ssh $i '
-	cd my_system/
-	git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
-	'
-done
+# # PULL
+# for i in "${SERVER_NAMES[@]}"
+# do
+# 	echo "================================"
+# 	echo $i
+# 	echo "================================"
+# 	ssh $i '
+# 	cd my_system/
+# 	git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
+# 	'
+# done
