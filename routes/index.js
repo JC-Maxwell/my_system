@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'pc1' });
+  res.render('index', { title: '---> commit manual' });
 };
