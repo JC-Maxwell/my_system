@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Commit 1', message: 'Hola Mundo' });
+  res.render('index', { title: 'Commit 1', message: 'Hola Mundo Clase' });
 };
