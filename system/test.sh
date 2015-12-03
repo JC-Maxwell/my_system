@@ -10,13 +10,13 @@ git config --global user.email "donmikebautista@gmail.com"
 git config --global user.name "donmikeazul"
 
 # ADD
-git add --all
+A=$(git add --all)
 
 # COMMIT
-git commit -m  "$COMMIT"
+B=$(git commit -m  "$COMMIT")
 
 # PUSH
-git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
+C=$(git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master)
 
 # PULL
 for i in "${SERVER_NAMES[@]}"
