@@ -65,17 +65,17 @@ git config --global user.email "donmikebautista@gmail.com"
 git config --global user.name "donmikeazul"
 
 # # ADD
-PROGRESS=$PROGRESS+5
+PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing add all   "
 git add --all
 
 # # COMMIT
-PROGRESS=$PROGRESS+5
+PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing commit    "
 COMMIT=$((git commit -m  "$COMMIT") 2>&1)
 
 # PUSH
-PROGRESS=$PROGRESS+5
+PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing push 	 "
 PUSH=$((git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master) 2>&1)
 
@@ -83,7 +83,7 @@ PUSH=$((git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_syst
 # PULL
 for i in "${SERVER_NAMES[@]}"
 do	
-	PROGRESS=$PROGRESS+5
+	PROGRESS=(($PROGRESS+5))
 	progress $PROGRESS "Executing push 	 "
 	PULL=$((ssh -t $i '
 	cd my_system/
