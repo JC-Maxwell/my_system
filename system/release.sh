@@ -77,7 +77,7 @@ COMMIT=$((git commit -m  "$COMMIT") 2>&1)
 # PUSH
 PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing push           "
-PUSH=$((git push https://linustorvaldsunam:LinusTorvalds@github.com/JC-Maxwell/my_system.git master) 2>&1)
+PUSH=$((git push https://linustorvaldsunam:linustorvalds1@github.com/JC-Maxwell/my_system.git master) 2>&1)
 
 
 # PULL
@@ -87,7 +87,7 @@ do
 	progress $PROGRESS "Executing pull in $i 		"
 	PULL=$((ssh -t $i '
 	cd my_system/
-	git pull https://linustorvaldsunam:LinusTorvalds@github.com/JC-Maxwell/my_system.git master
+	git pull https://linustorvaldsunam:linustorvalds1@github.com/JC-Maxwell/my_system.git master
 	sudo /etc/init.d/supervisord restart	
 	') 2>&1)
 	PULL_OUTPUT+=($PULL)
