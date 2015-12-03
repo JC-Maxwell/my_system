@@ -42,7 +42,7 @@ function progress()
     if [ $CURRENT_PROGRESS -le 80 -a $PARAM_PROGRESS -ge 80 ]; then echo -ne "[####################......] (80%) $PARAM_PHASE \r"  ; delay; fi;
     if [ $CURRENT_PROGRESS -le 85 -a $PARAM_PROGRESS -ge 85 ]; then echo -ne "[#######################...] (90%) $PARAM_PHASE \r"  ; delay; fi;
     if [ $CURRENT_PROGRESS -le 90 -a $PARAM_PROGRESS -ge 90 ]; then echo -ne "[##########################] (100%) $PARAM_PHASE \r" ; delay; fi;
-    if [ $CURRENT_PROGRESS -le 100 -a $PARAM_PROGRESS -ge 100 ];then echo -ne 'Done!                                            \n' ; delay; fi;
+    if [ $CURRENT_PROGRESS -le 100 -a $PARAM_PROGRESS -ge 100 ];then echo -ne '\o/                                              \n' ; delay; fi;
 
     CURRENT_PROGRESS=$PARAM_PROGRESS;
 
@@ -66,17 +66,17 @@ git config --global user.name "donmikeazul"
 
 # # ADD
 PROGRESS=$((PROGRESS+5))
-progress $PROGRESS "Executing add all	"
+progress $PROGRESS "Executing add all        "
 git add --all
 
 # # COMMIT
 PROGRESS=$((PROGRESS+5))
-progress $PROGRESS "Executing commit    "
+progress $PROGRESS "Executing commit         "
 COMMIT=$((git commit -m  "$COMMIT") 2>&1)
 
 # PUSH
 PROGRESS=$((PROGRESS+5))
-progress $PROGRESS "Executing push 	  	      "
+progress $PROGRESS "Executing push           "
 PUSH=$((git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master) 2>&1)
 
 
