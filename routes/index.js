@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: '¡Ya vieron equipo que si jala el pedo!' });
+  res.render('index', { title: 'pc1' });
 };
