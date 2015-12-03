@@ -13,11 +13,11 @@ git config --global user.name "donmikeazul"
 git add --all
 
 # # COMMIT
-A=$((git commit -m  "$COMMIT") 2>&1)
-echo $A
+COMMIT=$((git commit -m  "$COMMIT") 2>&1)
 
-# # PUSH
-# git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
+# PUSH
+PUSH=$((git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master) 2>&1)
+
 
 # # PULL
 # for i in "${SERVER_NAMES[@]}"
