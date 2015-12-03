@@ -76,7 +76,7 @@ COMMIT=$((git commit -m  "$COMMIT") 2>&1)
 
 # PUSH
 PROGRESS=$((PROGRESS+5))
-progress $PROGRESS "Executing push 	 "
+progress $PROGRESS "Executing push 	  	"
 PUSH=$((git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master) 2>&1)
 
 
@@ -84,15 +84,16 @@ PUSH=$((git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_syst
 for i in "${SERVER_NAMES[@]}"
 do	
 	PROGRESS=$((PROGRESS+5))
-	progress $PROGRESS "Executing push 		"
+	progress $PROGRESS "Executing pull in $i 	"
 	PULL=$((ssh -t $i '
 	cd my_system/
 	git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
 	sudo /etc/init.d/supervisord restart	
 	') 2>&1)
 	PULL_OUTPUT+=($PULL)
-
 done
+
+progress 100 "Done              "
 
 # STATUS
 # for j in "${PULL_OUTPUT[@]}"
