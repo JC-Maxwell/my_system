@@ -56,10 +56,6 @@ PROGRESS=0 # Variable para almacenar el progreso y mostrarlo en la animación
 
 ############################################### ESTO OCURRE EN EL SERVIDOR PRINCIPAL DONDE SE HIZO EL DESARROLLO
 
-# Configura git:
-git config --global user.email "linustorvaldsunam@gmail.com"
-git config --global user.name "linustorvaldsunam"
-
 # Agrega los archivos
 PROGRESS=$((PROGRESS+5))
 progress $PROGRESS "Executing add all        "
