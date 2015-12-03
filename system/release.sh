@@ -7,6 +7,10 @@
 # ██║ ╚═╝ ██║██║    ██║     ██║  ██║╚██████╔╝██████╔╝███████╗███████╗██║ ╚═╝ ██║██║  ██║
 # ╚═╝     ╚═╝╚═╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝
 
+# Hugo Enrique Ochoa Heredia
+# Clase de Linux
+# Licenciatura en Tecnología
+
 # F U N C I O N E S   L O C A L E S
 
 # Funcion para alentar                                                                                      
