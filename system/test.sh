@@ -4,6 +4,7 @@
 PROJECT_NAME=${PWD##*/}		# to assign to a variable
 SERVER_NAMES=("MI_4" "MI_6")
 COMMIT=$1
+PULL_OUTPUT=()
 
 # SET CONFIG PARAMS
 git config --global user.email "donmikebautista@gmail.com"
@@ -19,14 +20,11 @@ COMMIT=$((git commit -m  "$COMMIT") 2>&1)
 PUSH=$((git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master) 2>&1)
 
 
-# # PULL
-# for i in "${SERVER_NAMES[@]}"
-# do
-# 	echo "================================"
-# 	echo $i
-# 	echo "================================"
-# 	ssh $i '
-# 	cd my_system/
-# 	git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
-# 	'
-# done
+# PULL
+for i in "${SERVER_NAMES[@]}"
+do
+	ssh $i '
+	cd my_system/
+	PULL = git pull https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
+	'
+done
