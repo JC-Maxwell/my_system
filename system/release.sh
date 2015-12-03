@@ -91,6 +91,7 @@ do
 	sudo /etc/init.d/supervisord restart	
 	') 2>&1)
 	PULL_OUTPUT+=($PULL)
+	PROGRESS=$((PROGRESS+5))
 done
 
 progress 90 "RESTARTING              "
