@@ -14,6 +14,7 @@ git add --all
 
 # # COMMIT
 A=$((git commit -m  "$COMMIT") 2>&1)
+echo $A
 
 # # PUSH
 # git push https://donmikeazul:C4p1_T0rr4d0%@github.com/JC-Maxwell/my_system.git master
